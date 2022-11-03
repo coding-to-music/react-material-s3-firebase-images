@@ -1,0 +1,48 @@
+#followBtn, #followingBtn {
+    height: 38px;
+    // border-radius: 10px;
+    // radius relative to width and height of btn
+    border-radius: #{100% * 10px / 118px} / #{100% * 10px / 38px};
+    border: none;
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    position: relative;
+  }
+  
+  #followBtn {
+    width: 118px;
+    // padding expressed as percentage of width of btn
+    padding-left: 15px;
+    /* BtnGradient */
+    background: linear-gradient(
+      226.58deg,
+      rgba(173, 0, 255, 0.459) -25.99%,
+      rgba(219, 0, 255, 0.85) 46.08%,
+      rgba(160, 0, 255, 0.85) 75.24%,
+      rgba(51, 0, 255, 0.85) 129.49%
+    );
+    color: white;
+  }
+  
+  #followingBtn {
+    width: 132px;
+    padding-left: 11px;
+    /* NavGray */
+    background: #ededed;
+    color: #7a7979;
+  }
+  
+  #check {
+     /* sets its position from the left as a percentage of the container width, useful for dynamic resizing */
+    margin-right: 100% * (10px / 132px);
+    position: relative;
+  }
+  #plus {
+    /* sets its position from the left as a percentage of the container width, useful for dynamic resizing */
+    margin-right: (100% * 15px / 132px);
+    position: relative;
+  }
+  

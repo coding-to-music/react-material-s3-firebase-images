@@ -1,0 +1,255 @@
+@use "sass:list";
+//TODO: remove this line
+// @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+//TODO: order constants and get rid of unnecessary ones
+$contRectW: 682px;
+$contRectH: 747px;
+$contRectLeft: 383px;
+$contRectTop: 110px;
+
+$authContW: 201px;
+$authContH: 67px;
+$authContLeft: 850px;
+$authContTop: 633px;
+
+$authNameW: 120px;
+$authNameH: 41px;
+$authNameLeft: 931px;
+$authNameTop: 646px;
+$authNameFntSz: 18px;
+
+$profileImgW: 46px;
+$profileImgLeft: 858px;
+$profileImgTop: 644px;
+
+$border-radius: 30px;
+$border-radiusW: (($border-radius / $authContW) * 100%);
+$border-radiusH: (($border-radius / $authContH) * 100%);
+
+$titleW: 251px;
+$titleH: 41px;
+$titleLeft: 415px;
+$titleTop: 678px;
+$titleFntSz: 36px;
+$titleLnH: 43px;
+
+$commentLeft: 404px;
+$commentTop: 740px;
+$commentH: 38px;
+
+$commentImgW: 40px;
+$commentSpac: 8px;
+$commentFntSz: 15px;
+$commentSecH: 110px;
+$commentSecTop: 21px;
+
+  @media only screen and (max-width: $contRectW) {
+    #FeedPost {
+    #containerRect {
+      /* (container rectangle width (688px)  / macbook width (1512px)) */
+      width: 100vw;
+      /* container rectangle height (747px) / container rectangle width (688px) */
+      height: 108vw;
+      /* Why Border-radius is weird: https://stackoverflow.com/questions/29966499/border-radius-in-percentage-and-pixels-px-or-em
+      (border-radius (30px) / container rectangle width (688px)) / (border-radius (30px) / container rectangle height (747px)) */
+      /* calc is parsed into a string so that "/" is used as slash instead of div:  */
+      border-radius: #{100% * $border-radius/$contRectW}/#{100% * $border-radius/$contRectH};
+    }
+    #authorContainer {
+      /* author container width (201px) / container rectangle width (682px) */
+      width: ($authContW / $contRectW) * 100%;
+      /* author container height (67px) / container rectangle height (747px) */
+      height: ($authContH / $contRectH) * 100%;
+      /* relative left position from container rectangle (460px) / container rectangle width (682px) */
+      // left: 67.4%;
+      left: (($authContLeft - $contRectLeft) / $contRectW) * 100vw;
+      /* relative top positioning from container rectangle (523px) / container rectangle height (747px) */
+      top: (($authContTop - $contRectTop) / $contRectW) * 100vw;
+      /* (border-radius (30px) / author container width (201px)) / (border-radius (30px) / author container height (67px)) */
+      /* Why border-radius is weird: https://stackoverflow.com/questions/4988944/how-to-prevent-division-when-using-variables-separated-by-a-slash-in-css-propert */
+      border-radius: #{$border-radiusW}/#{$border-radiusH};
+    }
+    #profileImg {
+      width: ($profileImgW / $authContW) * 100%;
+      /* relative positioning of image to closest relative parent--container rect */
+      left: (($profileImgLeft - $authContLeft) / $authContW) * 100%;
+      top: (($profileImgTop - $authContTop) / $authContH) * 100%;
+    }
+    #authorName {
+      /* margin-left (81px) / author container width (201px) */
+      left: (($authNameLeft - $authContLeft) / $authContW) * 100%;
+      /* margin-top (13px) / author container width */
+      /* https://stackoverflow.com/questions/18331716/css-position-with-percent */
+      font-size: ($authNameFntSz / $contRectW) * 100vw;
+      line-height: (67px / $contRectW) * 100vw;
+      width: (201px / $contRectW) * 100vw;
+      height: (67px / $contRectW) * 100vw;
+    }
+    #artTitle {
+      /* relative left pos */
+      left: 100vw * 32px / $contRectW;
+      top: 100vw * 11px / $contRectH;
+      font-size: 100vw * $titleFntSz / $contRectW;
+    }
+    .commentSec {
+      height: 100vw * $commentSecH / $contRectH;
+      top: 100% * $commentSecTop / $contRectH;
+    }
+    .commentDiv {
+      // left: 100% * ($commentLeft - $contRectLeft) / $contRectW;
+      // top: 100% * ($commentTop - $contRectTop) / $contRectH;
+      margin-bottom: 100vw * $commentSpac / $contRectW;
+      padding-left: 100% * ($commentLeft - $contRectLeft) / $contRectW;
+    }
+    .commentImg {
+      width: 100vw * $commentImgW / $contRectW;
+      margin-right: 100vw * $commentSpac / $contRectW;
+    }
+    .commentText {
+      font-size: 100vw * $commentFntSz / $contRectW;
+    }
+  }
+  }
+  
+  /* sets feed box to stay same as long as screen width is at least as great as it. */
+  @media only screen and (min-width: 682px) {
+    #FeedPost {
+    #containerRect {
+      /* (container rectangle width (688px)  / macbook width (1512px)) */
+      width: $contRectW;
+      /* container rectangle height (747px) / macbook width (1512px)*/
+      height: $contRectH;
+      /* (border-radius (30px) */
+      border-radius: $border-radius;
+    }
+    #authorContainer {
+      /* author container width (201px) */
+      width: $authContW;
+      /* author container height (67px) */
+      height: $authContH;
+      /* relative left position from container rectangle (460px) */
+      left: $authContLeft - $contRectLeft;
+      /* relative top positioning from container rectangle (523px)*/
+      top: $authContTop - $contRectTop;
+      /* (border-radius (30px)) */
+      border-radius: $border-radius;
+    }
+    #profileImg {
+      width: $profileImgW;
+      /* relative positioning of image to direct parent */
+      left: $profileImgLeft - $authContLeft;
+      top: $profileImgTop - $authContTop;
+    }
+    #authorName {
+      /* absolute positioning for author name */
+      left: $authNameLeft - $authContLeft;
+      font-size: $authNameFntSz;
+      // line-height: 67px;
+      width: 201px;
+      height: 67px;
+      font-size: 18px;
+    }
+    #artTitle {
+      /* relative left pos */
+      // TODO: add to constants
+      left: 32px;
+      /* relative top pos */
+      top: 11px;
+      font-size: $titleFntSz;
+      // line-height: $titleLnH;
+    }
+    .commentSec {
+      height: $commentSecH;
+      top: $commentSecTop;
+    }
+    .commentDiv {
+      // left: $commentLeft - $contRectLeft;
+      // top: $commentTop - $contRectTop;
+      margin-bottom: $commentSpac;
+      padding-left: $commentLeft - $contRectLeft;
+    }
+    .commentImg {
+      width: $commentImgW;
+      margin-right: $commentSpac;
+    }
+    .commentText {
+      font-size: $commentFntSz;
+    }
+  }
+}
+  #FeedPost {
+  /* rounded rectangle that holds a post */
+  #containerRect {
+    position: relative;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.9);
+  }
+  /* artwork post */
+  #postImage {
+    /* parent is relative */
+    position: relative;
+    width: 100%;
+    border-radius: #{100% * $border-radius/$contRectW}/#{100% * $border-radius/557px};
+    height: 557px;
+    object-fit: cover;
+  }
+  /* rounded container that contains author img and name */
+  #authorContainer {
+    position: absolute;
+    background: linear-gradient(251.4deg, #56a190 31.02%, #2c5241 106.95%);
+  }
+  #profileImg {
+    position: absolute;
+  }
+  /* name of author */
+  #authorName {
+    position: absolute;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    // vertically centers text
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  
+  /* title of artwork (placed below art) */
+  #artTitle {
+    /* positioning is relative to container Rect */
+    position: relative;
+    text-align: left;
+    // margin-block-start: 0;
+    // margin-block-end: 0;
+    // font-weight: normal;
+  }
+
+  #art-description {
+    position: relative;
+    text-align: left;
+    left: 100vw * 12px / $contRectW;
+    top: 100vw * 5px / $contRectH;
+  }
+
+  .commentSec {
+    position: relative;
+    overflow: auto;
+    width: 100%;
+    // padding: 0;
+  }
+
+  .commentDiv {
+    position: relative;
+    display: flex;
+    align-items: center;
+    // height: $commentH;
+  }
+  
+  //TODO: get rid of
+  .commentText {
+    
+  }
+  
+  .commentImg {
+  }
+  }

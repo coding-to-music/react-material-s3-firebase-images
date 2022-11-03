@@ -1,0 +1,550 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+// BONUS: remove unnecessary ones
+//BONUS: stop artist profile img from wiggling back and forth when follow btn is pressed
+$modal-w: 1317px;
+$modal-h: 982px;
+$modal-border-radius: 30px;
+$modal-ver-padding: 10px;
+$modal-background-color: rgba(255, 250, 243, 0.95);
+
+$default-font-size: 18px;
+
+$image-w: 822px;
+
+$descr-w: 322px;
+
+$buy-w: 111px;
+$buy-h: 55px;
+$buy-font-size: 24px;
+$buy-btn-w: 111px;
+$buy-btn-border-radius: 12px;
+
+$title-font-size: 48px;
+$title-font-weight: 400;
+$title-margin-top: 16px;
+$title-margin-bottom: 19px;
+$title-color: rgba(0, 0, 0, 0.82);
+
+$price-font-size: 30px;
+$price-font-weight: 600;
+
+// breakpoint that makes comment sec vertical, below post
+$breakpoint: 774px;
+
+$icon-size: 60px;
+$second-icon-size: 48px;
+$absolute-icon-side-margin: 250px;
+$icon-side-margin: 242px;
+$icon-top-from-post: 16px;
+
+$close-btn-size: 60px;
+$close-btn-right-pos: 50px;
+$close-btn-top: 45px;
+
+// sets the denominator (aka scaling factor) for dynamic resizing of elements of post below the image after afterbreakpoint. Smaller number means elements will start larger.
+$post-scaling-denom: 600px;
+// left sec has post and author, while right sec has comments
+// changes pos to top and bottom sec after breakpoint
+$left-w: 910px;
+$right-w: 407px;
+$ver-gap-bw-post-comments: 30px;
+
+$descr-font-size: 24px;
+$descr-margin-bottom: 26px;
+$descr-margin-bottom-ver: 10px;
+$descr-w: 327px;
+$descr-font-weight: 300;
+
+$price-buy-gap-row: 20px;
+$price-buy-gap-col: 10px;
+
+// gap bw each comment div
+$comment-gap: 20px;
+// space between profile icon and text of comment inside a comment div
+$space-bw-profile-comment: 10px;
+// sets starting pos of comments, before scroll
+// TODO: set comments pos such that even when scrolling they stay below close button
+$comment-sec-margin-top: 80px;
+$profile-img-size: 49px;
+$comment-font-size: 16px;
+$comment-font-weight: 400;
+$comment-text-padding-right: 37px;
+$comment-name-right-gap: 8px;
+
+$author-container-gap: 22px;
+$author-container-height: 67px;
+$auth-cont-ml: 100px;
+$auth-cont-mb: 5px;
+
+
+
+
+#ViewPage {
+  //removes scrollbar, but keeps functionality for a cleaner look
+  // see: https://w3schools.com/howto/howto_css_hide_scrollbars.asp
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  *::-webkit-scrollbar {
+    display: none;
+  }
+  * {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    // justify-content: center;
+  }
+
+  position: absolute;
+  // sets default display to invisible so it is overriden on click
+  display: none;
+  z-index: 5;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+
+  #close-btn {
+    position: absolute;
+    top: 0px;
+    right: $close-btn-right-pos;
+    width: $close-btn-size;
+    height: $close-btn-size;
+    // puts it on top so it is visible above modal
+    z-index: 1;
+  }
+
+  // styling for author div on top of image
+  #view-author-container {
+    gap: $author-container-gap;
+    height: $author-container-height;
+    //TODO: replace with grid system to center author name and img to title but not follow btn
+    margin-left: $auth-cont-ml;
+    // sets spacing bw artist div and their img
+    margin-bottom: $auth-cont-mb;
+    border-radius: 10px;
+   
+  }
+
+  #followBtn {
+    // padding-left: 15px;
+  }
+
+  #followingBtn {
+    // padding-left: 11px;
+  }
+
+  #image {
+    width: 100% * $image-w / $left-w;
+    // margin-top: 80px;
+    position: relative;
+    /* margin-left: auto;
+    margin-right: auto; */
+  }
+
+  // // TODO: BONUS: factor out code
+  .centered {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #modal {
+    width: $modal-w;
+    background: $modal-background-color;
+    border-radius: $modal-border-radius;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    height: 100vh;
+    /* sets padding for top and bottom, useful for long iPhones in horizontal mode */
+    padding: $modal-ver-padding 0;
+    /* ensures that cal for w and h take into account padding */
+    /* https://stackoverflow.com/questions/485827/css-100-height-with-padding-margin */
+    box-sizing: border-box;
+  }
+  .left {
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    /* hor centers items */
+    align-items: center;
+    flex-direction: column;
+    width: 100% * $left-w / $modal-w;
+    height: 100%;
+    height: auto;
+    // overflow: scroll;
+    // overflow-y: auto;
+    justify-content: center;
+    /* text-align: center; */
+  }
+
+  .right {
+    position: relative;
+    width: 100% * $right-w / $modal-w;
+    height: 100%;
+    overflow: auto;
+    // box-sizing: border-box;
+  }
+  // sets default font sz
+  .right * {
+    // font-family: 'Inter';
+    // font-style: normal;
+    // box-sizing: border-box;
+    font-size: $default-font-size;
+  }
+  // @media screen and (max-height: 774px) {
+
+  // }
+  #title {
+    text-align: center;
+    font-family: Lato;
+    font-weight: $title-font-size;
+    font-size: $title-font-size;
+    align-self: center;
+    align-content: center;
+    color: $title-color;
+    margin-bottom: 100vw * $title-margin-bottom / $modal-w;
+    margin-top: 100vw * $title-margin-top / $modal-w;
+
+    /* display: flex;
+    align-items: center; */
+  }
+
+  .comment-name {
+    font-weight: bold;
+    // spacing between name of commenter and the text of their comment
+    margin-right: $comment-name-right-gap;
+    /* white-space: nowrap; */
+    // width: 130px;
+    /* paddiing-left: auto; */
+    /* flex-grow: 1; */
+  }
+  /* TODO: change comment-name to text */
+  .comment-text {
+    font-weight: $comment-font-weight;
+    text-align: left;
+    font-size: $comment-font-size;
+    // flex-shrink: 3;
+    margin-left: $space-bw-profile-comment;
+    // sets gap bw comment and right edge of modal. is added for aesthetic purposes.
+    padding-right: $comment-text-padding-right;
+
+    /* allows words to wrap when they reach edge of container */
+    /* see: https://stackoverflow.com/
+    questions/1165497/how-to-prevent-text-from-overflowing-in-css
+    */
+    word-wrap: break-word;
+  }
+
+  #comment-sec {
+    // width: 405px;
+    width: 100%;
+    position: relative;
+    // display: grid;
+    // grid-template-columns: 51px 319px;
+    // // align-items: center;
+    // grid-auto-rows: min-content;
+    // align-items: start;
+
+    margin-top: $comment-sec-margin-top;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    // sets gap between comments
+    gap: $comment-gap;
+  }
+
+  .comment {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  /* #comments {
+    overflow: scroll;
+} */
+
+  .profile-img {
+    width: $profile-img-size;
+  }
+
+  .profile-img-div {
+    width: $profile-img-size;
+    display: flex;
+    align-items: start;
+  }
+
+  // .commentDiv {
+  //     display: flex;
+  //     overflow: hidden;
+  //     // flex: 0.5;
+  // }
+
+  #description {
+    font-family: Lato;
+    // font-style: normal;
+    font-weight: $descr-font-weight;
+    font-size: $descr-font-size;
+    // line-height: 29px;
+    // text-align: center;
+    width: $descr-w;
+    word-wrap: break-word;
+    margin-bottom: $descr-margin-bottom;
+  }
+
+  #price {
+    font-family: Lato;
+    font-weight: $descr-font-weight;
+    font-size: $price-font-size;
+  }
+  
+  #price-and-buy {
+    display: flex;
+    align-content: center;
+    gap: $price-buy-gap-row;
+    align-items: center;
+  }
+
+  #buy-btn {
+    font-weight: bold;
+    font-size: $buy-font-size;
+    width: $buy-btn-w;
+    height: $buy-h;
+    background: rgba(0, 0, 0, 0.85);
+    transition: background 0.5s;
+    border-radius: $buy-btn-border-radius;
+    color: white;
+    border: none;
+  }
+
+  #buy-btn:hover {
+    background: gray;
+  }
+
+  //TODO: factor our display: flex into a flex class
+  #title-line {
+    display: flex;
+  }
+  %absolute-icons {
+    position: relative;
+    top: $icon-top-from-post;
+    width: $second-icon-size;
+    height: $second-icon-size;
+  }
+
+  #comment-icon {
+    // position: absolute;
+    // left: 812px;
+    // top: 64%;
+    @extend %absolute-icons;
+    left: $icon-side-margin;
+  }
+
+  #like-icon {
+    @extend %absolute-icons;
+    right: $icon-side-margin;
+  }
+
+  @media screen and (max-width: $modal-w) {
+    #modal {
+      width: 100vw;
+    }
+      // styling for author div on top of image
+  #view-author-container {
+    gap: 100vw * $author-container-gap / $modal-w;
+    height: 100vw * $author-container-height / $modal-w;
+    //TODO: replace with grid system to center author name and img to title but not follow btn
+    margin-left: 100vw * $auth-cont-ml / $modal-w;
+    // sets spacing bw artist div and their img
+    margin-bottom: 100vw * $auth-cont-mb / $modal-w;
+    #view-profile-img {
+      width: 100vw * $profile-img-size / $modal-w;
+    }
+    #view-author-name {
+      font-size: 100vw * $comment-font-size / $modal-w;
+    }
+    #followBtn, #followingBtn {
+      font-size: 100vw * 18px/ $modal-w;
+      height: 100vw * 38px / $modal-w;
+      // border-radius: 100vw * 10px / $modal-w;
+      
+    }
+
+    #followBtn {
+      width: 100vw * 118px / $modal-w;
+      padding-left: 100vw * 15px / $modal-w;
+    }
+    #followingBtn {
+      width: 100vw * 138px / $modal-w;
+      padding-left: 100vw * 11px / $modal-w;
+    }
+  }
+    #title {
+      font-size: 100vw * $title-font-size / $modal-w;
+    }
+    #description {
+      font-size: 100vw * $descr-font-size / $modal-w;
+    }
+    #price {
+      font-size: 100vw * $price-font-size / $modal-w;
+    }
+    // #price-and-buy {
+    //     gap: 20px /
+    // }
+    // common code for scaling icons dynamically when screen is smaller than modal-w
+    %icons-first-breakpoint-pos {
+      width: 100vw * $second-icon-size / $modal-w;
+      top: 100vw * $icon-top-from-post / $modal-w;
+      height: 100vw * $second-icon-size / $modal-w;
+    }
+    #comment-icon {
+      @extend %icons-first-breakpoint-pos;
+      left: 100vw * $icon-side-margin / $modal-w;
+    }
+    #like-icon {
+      @extend %icons-first-breakpoint-pos;
+      right: 100vw * $icon-side-margin / $modal-w;
+    }
+    #buy-btn {
+      font-size: 100vw * $buy-font-size / $modal-w;
+      width: 100vw * $buy-w / $modal-w;
+      height: 100vw * $buy-h / $modal-w;
+      border-radius: #{100% * $buy-btn-border-radius / $buy-w}/#{100% * $buy-btn-border-radius /
+        $buy-h};
+    }
+    
+  }
+  // when screen is small, moves comment sec to below post so that post is large enough
+  @media screen and (max-width: $breakpoint) {
+    // styling for author div on top of image
+  #view-author-container {
+    gap: 100vw * $author-container-gap / $post-scaling-denom;
+    height: 100vw * $author-container-height / $post-scaling-denom;
+    //TODO: replace with grid system to center author name and img to title but not follow btn
+    margin-left: 100vw * $auth-cont-ml / $post-scaling-denom;
+    // sets spacing bw artist div and their img
+    margin-bottom: 100vw * $auth-cont-mb / $post-scaling-denom;
+    #view-profile-img {
+      width: 100vw * $profile-img-size / $post-scaling-denom;
+    }
+    #view-author-name {
+      font-size: 100vw * $comment-font-size / $post-scaling-denom;
+    }
+    #followBtn, #followingBtn {
+      font-size: 100vw * 18px/ $post-scaling-denom;
+      height: 100vw * 38px / $post-scaling-denom;
+      // border-radius: 100vw * 10px / $modal-w;
+      
+    }
+
+    #followBtn {
+      width: 100vw * 118px / $post-scaling-denom;
+      padding-left: 100vw * 15px / $post-scaling-denom;
+    }
+    #followingBtn {
+      width: 100vw * 138px / $post-scaling-denom;
+      padding-left: 100vw * 11px / $post-scaling-denom;
+    }
+  }
+  
+
+    #modal {
+      flex-direction: column;
+      border-radius: #{100% * $modal-border-radius / $breakpoint}/#{100% * $modal-border-radius /
+        $breakpoint};
+      height: 100vh;
+      // TODO: BONUS: set padding on scrolling so that content cant scroll past close btn
+      overflow: auto;
+    }
+
+    .right {
+      overflow: unset;
+    }
+
+    #comment-sec {
+      margin-top: 0;
+      height: auto;
+      // sets overflow to its default (no scroll) when comment sec is vertical.
+      // This is done so that the height of the modal increases instead of being able to only scroll the comment sec
+      overflow: unset;
+    }
+
+    #close {
+      width: 100vw * $close-btn-size / $breakpoint;
+      height: 100vw * $close-btn-size / $breakpoint;
+      // min-width: 40px;
+      // min-height: 40px;
+      /* centers close btn when screen is very small (for mobile) */
+      left: 50vw;
+      transform: translateX(-50%);
+      /* animates close btn on close */
+      transition: opacity 0.5s;
+    }
+
+    #image {
+      //    margin-top: 100% * 80px / $breakpoint;
+      //    margin-top: 100% * 40px / $breakpoint;
+      //    margin-top: 100% * 60px / $breakpoint;
+    }
+    .left {
+      width: 100%;
+      // overflow: auto;
+      // gap bw post and comment sec for vertical positioning
+      margin-bottom: $ver-gap-bw-post-comments;
+      margin-top: $close-btn-top;
+    }
+    .right {
+      height: auto;
+      width: 100%;
+    }
+    #modal {
+      height: 100vh;
+    }
+
+    #title {
+      // makes text bigger at breakpoint so that when it scales it isnt too small
+      font-size: 100vw * $title-font-size / $post-scaling-denom;
+    }
+    #description {
+      // makes text bigger at breakpoint so that when it scales it isnt too small
+      font-size: 100vw * $descr-font-size / $post-scaling-denom;
+      margin-bottom: $descr-margin-bottom-ver;
+    }
+    #price {
+      // makes text bigger at breakpoint so that when it scales it isnt too small
+      font-size: 100vw * $price-font-size / $post-scaling-denom;
+    }
+    // #price-and-buy {
+    //     gap: 20px /
+    // }
+
+    // sets the dynamic resizing for like and comment icons
+    %dynamic-pos-icons {
+      position: relative;
+      width: 100vw * $icon-size / $breakpoint;
+      height: 100vw * $icon-size / $breakpoint;
+      top: 100vw * $icon-top-from-post / $modal-w;
+    }
+
+    #like-icon {
+      @extend %dynamic-pos-icons;
+      right: 100vw * $icon-side-margin / $modal-w;
+    }
+
+    #comment-icon {
+      @extend %dynamic-pos-icons;
+      left: 100vw * $icon-side-margin / $modal-w;
+    }
+    #price-and-buy {
+      flex-direction: column;
+      gap: $price-buy-gap-col;
+    }
+    #buy-btn {
+      font-size: 100vw * $buy-font-size / $post-scaling-denom;
+      width: 100vw * $buy-w / $post-scaling-denom;
+      height: 100vw * $buy-h / $post-scaling-denom;
+      border-radius: #{100% * $buy-btn-border-radius / $buy-w}/#{100% * $buy-btn-border-radius /
+        $buy-h};
+    }
+  }
+}

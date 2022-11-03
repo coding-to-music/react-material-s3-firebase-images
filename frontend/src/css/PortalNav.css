@@ -1,0 +1,36 @@
+#PortalNav {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  /* NavGray */
+  background: #ededed;
+  border-radius: 40px;
+  width: 248px;
+  margin: 0 auto;
+  height: 65px;
+  align-items: center;
+  justify-content: space-evenly;
+  z-index: 0;
+  position: relative;
+  margin-bottom: 40px;
+}
+#PortalNav .icon {
+  width: 27px;
+  height: 27px;
+  z-index: 2;
+  position: relative;
+  color: gray;
+}
+#PortalNav #purple-selector {
+  position: absolute;
+  /* NavGradient */
+  background: linear-gradient(231.85deg, rgba(173, 0, 255, 0.459) 15.33%, rgba(219, 0, 255, 0.85) 77.46%, rgba(160, 0, 255, 0.85) 102.59%, rgba(51, 0, 255, 0.85) 149.36%);
+  border-radius: 40px;
+  width: 92px;
+  height: 65px;
+  z-index: 1;
+  left: 0;
+  transition: left, 0.2s;
+}
+
+/*# sourceMappingURL=PortalNav.css.map */

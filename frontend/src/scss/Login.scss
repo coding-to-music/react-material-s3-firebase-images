@@ -1,0 +1,230 @@
+@use "sass:list";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+$input-width-ini: 392px;
+$input-height-ini: 67px;
+
+$height-resize-brk: 450px;
+
+$welcome-font-size: 54px;
+$input-pholder-font-size: 24px;
+$lasco-font-size: 36px;
+
+$lasco-logo-size: 51px;
+
+$welcome-margin-bot-ini: 28px;
+$form-gap-ini: 28px;
+
+$input-padding-left-ini: 24px;
+
+#Login {
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+}
+
+#Login {
+   #forgotPass {
+        // display: flex;
+        // position: relative;
+        // width: 100%;
+        // align-items: center;
+        // margin: 0 auto;
+        text-align: center;
+    }
+    #error {
+        text-align: center;
+    }
+    #login-div {
+        text-align: center;
+    }
+    #left-rect {
+        position: relative;
+        background-color: white;
+        width: 50vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #right-rect {
+        background-image: url("../sample/sky/skydrawing.png");
+        background-size: cover;
+        background-position: center;
+        width: 50vw;
+        height: 100vh;
+        left: 400px;
+    }
+
+    form {
+        display: flex;
+        align-content: center;
+        flex-direction: column;
+        gap: 28px;
+    }
+
+    #welcome-text {
+        // font-style: normal;
+        font-weight: bold;
+        font-size: 54px;
+        margin-bottom: 61px;
+        align-items: center;
+        text-align: center;
+    }
+
+    #sign-button {
+        position: relative;
+        width: 392px;
+        height: 67px;
+        // background: linear-gradient(
+        //     225.34deg,
+        //     rgba(173, 0, 255, 0.459) -26.34%,
+        //     rgba(219, 0, 255, 0.85) 59.15%,
+        //     rgba(160, 0, 255, 0.85) 93.73%,
+        //     rgba(51, 0, 255, 0.85) 158.09%
+        // );
+        // border-radius: 12px;
+        // font-family: Inter;
+        // font-style: normal;
+        // font-weight: bold;
+        // font-size: 24px;
+        // line-height: 29px;
+        // text-align: center;
+      
+        margin: 0 auto;
+        // border: none;
+    }
+
+    .magenta-text {
+        color: #de35ff;
+        // font-family: Inter;
+    }
+
+    input {
+        position: relative;
+        padding-left: 24px;
+        width: 392px;
+        height: 67px;
+        border: 2px solid #000000;
+        box-sizing: border-box;
+        border-radius: 12px;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        margin: 0 auto;
+    }
+
+    input:focus {
+        outline: none;
+    }
+
+    input::placeholder {
+        position: relative;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 29px;
+        align-items: center;
+    }
+
+    @media screen and (max-width: 920px) {
+        #left-rect {
+            width: 100vw;
+        }
+
+        #right-rect {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 435px) {
+        input,
+        #sign-button {
+            width: 90vw;
+        }
+    }
+
+    #logo-div {
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        bottom: 34px;
+    }
+
+    #logo-div > img {
+        width: 40px;
+        height: 40px;
+    }
+
+    #logo-div > div {
+        font-family: Inter;
+        font-style: normal;
+        font-weight: bold;
+        text-align: center;
+        font-size: 30px;
+    }
+
+    #has-account {
+        text-align: center;
+    }
+
+    #signup-link:hover {
+        text-decoration: underline;
+    }
+
+    @media screen and (max-height: 608px) {
+        #logo-div {
+            position: relative;
+            bottom: 0;
+            padding-top: 15px;
+        }
+    }
+
+    @media screen and (max-height: 500px) {
+        #welcome-text {
+            margin-bottom: 28px;
+        }
+    }
+
+    @media screen and (max-height: $height-resize-brk) {
+        input,
+        #sign-button {
+            width: ($input-width-ini/$height-resize-brk) * 100vh;
+            height: ($input-height-ini/$height-resize-brk) * 100vh;
+        }
+
+        #welcome-text {
+            font-size: ($welcome-font-size/$height-resize-brk) * 100vh;
+            margin-bottom: ($welcome-margin-bot-ini/$height-resize-brk) * 100vh;
+        }
+
+        input,
+        input::placeholder,
+        #sign-button {
+            font-size: ($input-pholder-font-size/$height-resize-brk) * 100vh;
+        }
+
+        form {
+            gap: ($form-gap-ini/$height-resize-brk) * 100vh;
+        }
+
+        #logo-div > div {
+            font-size: ($lasco-font-size/$height-resize-brk) * 100vh;
+        }
+
+        #logo-div > img {
+            width: ($lasco-logo-size/$height-resize-brk) * 100vh;
+            height: ($lasco-logo-size/$height-resize-brk) * 100vh;
+        }
+
+        input {
+            padding-left: ($input-padding-left-ini/$height-resize-brk) * 100vh;
+        }
+    }
+}

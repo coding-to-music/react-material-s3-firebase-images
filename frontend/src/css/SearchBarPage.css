@@ -1,0 +1,117 @@
+/* import cancel from "./sample/posts/cancel.svg"; */
+#SearchBarPage {
+  /* input text for search */
+  /* changes placeholder text styling to gray */
+  /* #searchText::placeholder {
+      color: gray;
+      opacity: 0.8;
+    } */
+  /* does not display x button in search field */
+  /* placeholder text for search */
+}
+#SearchBarPage #searchBar {
+  position: relative;
+  top: 331px;
+  height: 73px;
+  width: 621px;
+  border-radius: 20px;
+  margin: 0 auto;
+  padding-left: 25px;
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  background: #FFFFFF;
+  border: 2px solid #000000;
+  transition: top 1s, width 1s;
+}
+#SearchBarPage #searchBar.desktop-focused {
+  top: 83px;
+  width: 1075px;
+}
+#SearchBarPage #searchText {
+  /* removes default styling for input */
+  outline: none;
+  box-shadow: none;
+  border: none;
+  color: black;
+  /* color: rgb(195,55,245); */
+  z-index: 3;
+  background: transparent;
+  caret-color: gray;
+  font-family: "Inter";
+  font-size: 24px;
+  font-weight: 500;
+  position: relative;
+  line-height: 36px;
+  /* sets width of input field */
+  width: 95%;
+}
+#SearchBarPage #magGlass {
+  margin-right: 14px;
+  width: 34px;
+  height: 34px;
+}
+#SearchBarPage #searchText::-webkit-search-cancel-button {
+  /* display: none; */
+  -webkit-appearance: none;
+  /* https://stackoverflow.com/questions/20804016/editing-input-type-search-pseudo-element-button-x */
+  /* allows me to use custom cancel button */
+  -webkit-user-modify: read-write !important;
+  content: url("../sample/posts/cancel.svg");
+  color: black;
+  height: 20px;
+  width: 20px;
+}
+#SearchBarPage #searchText::-webkit-search-decoration {
+  display: none;
+  -webkit-appearance: none;
+}
+#SearchBarPage #placeholder {
+  font-family: Inter;
+  font-size: 24px;
+  /* line-height: 36px; */
+  color: rgba(137, 137, 137, 0.9);
+  position: absolute;
+  left: 67px;
+  /* makes it impossible to select the text, not necc
+  since it dissapears anyway */
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
+#SearchBarPage .placeholderGradient {
+  background: linear-gradient(236.91deg, rgba(227, 54, 255, 0.7) 61.17%, rgba(160, 0, 255, 0.7) 74.94%);
+  background-clip: text;
+  color: transparent;
+  fill-opacity: 0;
+}
+@media only screen and (max-width: 1100px) {
+  #SearchBarPage {
+    /* https://css-tricks.com/the-trick-to-viewport-units-on-mobile/ */
+    /* fixes edge case where vh doesnt take into account browser ui in mobile */
+    /* for some reason placeholder text on mobile is offset down, this is a janky fix for that */
+  }
+  #SearchBarPage .App {
+    height: 100vh;
+  }
+  #SearchBarPage #searchBar, #SearchBarPage #searchBar.desktop-focused {
+    /* resizes search bar for mobile */
+    position: relative;
+    width: 90% !important;
+    top: 20px !important;
+  }
+  #SearchBarPage #searchBar::placeholder {
+    display: none;
+  }
+  #SearchBarPage #placeholder {
+    top: -5px;
+  }
+  #SearchBarPage #searchText {
+    /* moves input to the left */
+  }
+}
+
+/*# sourceMappingURL=SearchBarPage.css.map */

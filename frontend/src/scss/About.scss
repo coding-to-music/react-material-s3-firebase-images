@@ -1,0 +1,37 @@
+#About {
+  background-color: white;
+  width: 100vw;
+// TODO: last:  add these numbers to constants
+  box-sizing: border-box;
+  .sec {
+    //   width: 1167px;
+    width: 100vw * 1167px / 1512px;
+    max-width: 1167px;
+      margin: 0 auto;
+      padding-bottom: 30px;
+      box-sizing: border-box;
+  }
+
+  .main-header {
+      text-align: center;
+    font-weight: bold;
+    font-size: 48px;
+    color: #0b0037;
+    margin-top: 25px;
+    margin-bottom: 50px;
+  }
+  
+  .sub-header {
+
+    font-weight: 600;
+    font-size: 40px;
+    color: #0b0037;
+    text-align: left;
+  }
+
+  .paragraph {
+    font-weight: 300;
+    font-size: 24px;
+    text-align: justify;
+  }
+}

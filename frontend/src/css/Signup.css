@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+#Signup {
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+}
+
+#Signup #left-rect {
+  position: relative;
+  background-color: white;
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#Signup #right-rect {
+  background-image: url("../sample/sky/skydrawing.png");
+  background-size: cover;
+  background-position: center;
+  width: 50vw;
+  height: 100vh;
+  left: 400px;
+}
+#Signup .magenta-text {
+  color: #de35ff;
+}
+#Signup #explore-text {
+  font-weight: bold;
+  font-size: 45px;
+  margin-bottom: 30px;
+  align-items: center;
+  text-align: center;
+}
+#Signup input,
+#Signup #use-for {
+  position: relative;
+  padding-left: 24px;
+  width: 392px;
+  height: 60px;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 24px;
+  margin: 0 auto;
+}
+#Signup form {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+#Signup #sign-button {
+  position: relative;
+  width: 392px;
+  height: 67px;
+  font-size: 24px;
+  text-align: center;
+  margin: 0 auto;
+}
+#Signup #logo-div {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  bottom: 20px;
+}
+#Signup #logo-div > img {
+  width: 40px;
+  height: 40px;
+}
+#Signup #logo-div > div {
+  font-weight: bold;
+  text-align: center;
+  font-size: 30px;
+}
+#Signup #has-account {
+  text-align: center;
+}
+#Signup #login-link:hover {
+  text-decoration: underline;
+}
+@media screen and (max-width: 920px) {
+  #Signup #right-rect {
+    display: none;
+  }
+  #Signup #left-rect {
+    width: 100vw;
+  }
+}
+@media screen and (max-width: 435px) {
+  #Signup input,
+#Signup #use-for,
+#Signup #sign-button {
+    width: 90vw;
+  }
+}
+@media screen and (max-height: 630px) {
+  #Signup input,
+#Signup #use-for,
+#Signup #sign-button {
+    width: 62.2222222222vh;
+    height: 9.5238095238vh;
+  }
+  #Signup #explore-text {
+    font-size: 7.1428571429vh;
+    margin-bottom: 4.7619047619vh;
+  }
+  #Signup input,
+#Signup input::placeholder,
+#Signup #use-for,
+#Signup #sign-button {
+    font-size: 3.8095238095vh;
+  }
+  #Signup form {
+    gap: 3.1746031746vh;
+  }
+  #Signup #logo-div > div {
+    font-size: 4.7619047619vh;
+  }
+  #Signup #logo-div > img {
+    width: 6.3492063492vh;
+    height: 6.3492063492vh;
+  }
+  #Signup input,
+#Signup #use-for {
+    padding-left: 3.8095238095vh;
+  }
+}
+
+/*# sourceMappingURL=Signup.css.map */

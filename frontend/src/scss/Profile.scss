@@ -1,0 +1,159 @@
+// TODO: remove line above, doesnt need to import Inter
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+// also the height of img
+$imgW: 195px;
+// vertical and hor gaps are the same
+$imgGap: 40px;
+// number of max images in a row
+$numImgs: 4;
+
+.blur {
+    filter: blur(8px);
+}
+
+// TODO: add these numbers to constants
+// BONUS: remove uneccessary ones
+#Profile {
+.profileName {
+    // eqv to top margin, resets default margins from h2
+    margin-block-end: 0;
+    font-weight: bold;
+    font-size: 24px;
+}
+.username {
+    // eqv to top margin
+    margin-block-start: 9px;
+    // eqv to bottom margin
+    margin-block-end: 28px;
+    font-weight: 300;
+    font-size: 18px;
+}
+//TODO: change to camel casing
+// TODO: change pixel value
+.galleryImg {
+    width: 195px;
+}
+.profileImg {
+width: 118px;
+}
+
+.bio {
+    margin-block-end: 19px;
+    font-weight: 200;
+    font-size: 18px;
+}
+
+#dashboard * {
+    font-family: "Inter";
+}
+
+// sets gallery columns to decrement by 1 when screen size is smaller than full
+@media only screen and (max-width: ($imgW * $numImgs + $imgGap * ($numImgs - 1))) {
+    #gallery {
+        grid-template-columns: repeat($numImgs - 1, auto);
+        width: $imgW * ($numImgs - 1) + $imgGap * ($numImgs - 2);
+
+    }
+} 
+// sets gallery columns to decrement by 2 when screen size is small enough
+@media only screen and (max-width: ($imgW * ($numImgs - 1) + $imgGap * ($numImgs - 2))) {
+    #gallery {
+        grid-template-columns: repeat($numImgs - 2, auto);
+        width: $imgW * ($numImgs - 2) + $imgGap * ($numImgs - 3);
+
+    }
+} 
+// for mobile, displays all images in a column at max width
+@media only screen and (max-width: ($imgW * ($numImgs - 2) + $imgGap * ($numImgs - 3))) {
+    #gallery {
+        grid-template-columns: repeat($numImgs - 3, auto);
+        // width: $imgW * ($numImgs - 3) + $imgGap * ($numImgs - 4);
+        // sets width of column to almost entire screen w
+        width: 95%;
+    }
+    #gallery * {
+        // sets each img to span column w
+        width: 100%;
+    }
+} 
+// for desktop, sets gallery to display four images in each row
+@media only screen and (min-width: ($imgW * $numImgs + $imgGap * ($numImgs - 1))) {
+    #gallery {
+    
+        // num of imgs in row + num of gaps
+        width: $imgW * $numImgs + $imgGap * ($numImgs - 1);
+        // fills width of grid with imgs
+        grid-template-columns: repeat($numImgs, $imgW);
+    
+    }
+}
+
+// common gallery code shared bw all screen sizes 
+#gallery {
+    display: grid;
+    position: relative;
+    gap: $imgGap;
+    margin: 34px auto;
+    // fills rows with images until none are left
+    grid-template-rows: auto;
+}
+
+#profile-div {
+    /* centers profile div */
+    margin: 0 auto;
+    width: min-content;
+    gap: 20px;
+}
+
+#edit-profile-btn {
+    // justify-self: center;
+    // align-self: center;
+    // margin: auto auto;
+}
+
+.profile-link {
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+    display: flex;
+}
+
+.del-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s
+}
+
+.container{
+    width: 195px;
+    height: 195px;
+    border-radius: 20px;
+  }
+  .container img{
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
+  @supports(object-fit: cover){
+      .container img{
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+      }
+  }
+
+.profile-btn {
+    width: 100px;
+    height: 30px;
+}
+
+}

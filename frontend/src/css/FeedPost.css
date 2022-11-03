@@ -1,0 +1,180 @@
+@media only screen and (max-width: 682px) {
+  #FeedPost #containerRect {
+    /* (container rectangle width (688px)  / macbook width (1512px)) */
+    width: 100vw;
+    /* container rectangle height (747px) / container rectangle width (688px) */
+    height: 108vw;
+    /* Why Border-radius is weird: https://stackoverflow.com/questions/29966499/border-radius-in-percentage-and-pixels-px-or-em
+    (border-radius (30px) / container rectangle width (688px)) / (border-radius (30px) / container rectangle height (747px)) */
+    /* calc is parsed into a string so that "/" is used as slash instead of div:  */
+    border-radius: 4.3988269795%/4.016064257%;
+  }
+  #FeedPost #authorContainer {
+    /* author container width (201px) / container rectangle width (682px) */
+    width: 29.4721407625%;
+    /* author container height (67px) / container rectangle height (747px) */
+    height: 8.969210174%;
+    /* relative left position from container rectangle (460px) / container rectangle width (682px) */
+    left: 68.4750733138vw;
+    /* relative top positioning from container rectangle (523px) / container rectangle height (747px) */
+    top: 76.6862170088vw;
+    /* (border-radius (30px) / author container width (201px)) / (border-radius (30px) / author container height (67px)) */
+    /* Why border-radius is weird: https://stackoverflow.com/questions/4988944/how-to-prevent-division-when-using-variables-separated-by-a-slash-in-css-propert */
+    border-radius: 14.9253731343%/44.776119403%;
+  }
+  #FeedPost #profileImg {
+    width: 22.8855721393%;
+    /* relative positioning of image to closest relative parent--container rect */
+    left: 3.9800995025%;
+    top: 16.4179104478%;
+  }
+  #FeedPost #authorName {
+    /* margin-left (81px) / author container width (201px) */
+    left: 40.2985074627%;
+    /* margin-top (13px) / author container width */
+    /* https://stackoverflow.com/questions/18331716/css-position-with-percent */
+    font-size: 2.6392961877vw;
+    line-height: 9.8240469208vw;
+    width: 29.4721407625vw;
+    height: 9.8240469208vw;
+  }
+  #FeedPost #artTitle {
+    /* relative left pos */
+    left: 4.6920821114vw;
+    top: 1.4725568942vw;
+    font-size: 5.2785923754vw;
+  }
+  #FeedPost .commentSec {
+    height: 14.7255689424vw;
+    top: 2.8112449799%;
+  }
+  #FeedPost .commentDiv {
+    margin-bottom: 1.1730205279vw;
+    padding-left: 3.0791788856%;
+  }
+  #FeedPost .commentImg {
+    width: 5.8651026393vw;
+    margin-right: 1.1730205279vw;
+  }
+  #FeedPost .commentText {
+    font-size: 2.1994134897vw;
+  }
+}
+/* sets feed box to stay same as long as screen width is at least as great as it. */
+@media only screen and (min-width: 682px) {
+  #FeedPost #containerRect {
+    /* (container rectangle width (688px)  / macbook width (1512px)) */
+    width: 682px;
+    /* container rectangle height (747px) / macbook width (1512px)*/
+    height: 747px;
+    /* (border-radius (30px) */
+    border-radius: 30px;
+  }
+  #FeedPost #authorContainer {
+    /* author container width (201px) */
+    width: 201px;
+    /* author container height (67px) */
+    height: 67px;
+    /* relative left position from container rectangle (460px) */
+    left: 467px;
+    /* relative top positioning from container rectangle (523px)*/
+    top: 523px;
+    /* (border-radius (30px)) */
+    border-radius: 30px;
+  }
+  #FeedPost #profileImg {
+    width: 46px;
+    /* relative positioning of image to direct parent */
+    left: 8px;
+    top: 11px;
+  }
+  #FeedPost #authorName {
+    /* absolute positioning for author name */
+    left: 81px;
+    font-size: 18px;
+    width: 201px;
+    height: 67px;
+    font-size: 18px;
+  }
+  #FeedPost #artTitle {
+    /* relative left pos */
+    left: 32px;
+    /* relative top pos */
+    top: 11px;
+    font-size: 36px;
+  }
+  #FeedPost .commentSec {
+    height: 110px;
+    top: 21px;
+  }
+  #FeedPost .commentDiv {
+    margin-bottom: 8px;
+    padding-left: 21px;
+  }
+  #FeedPost .commentImg {
+    width: 40px;
+    margin-right: 8px;
+  }
+  #FeedPost .commentText {
+    font-size: 15px;
+  }
+}
+#FeedPost {
+  /* rounded rectangle that holds a post */
+  /* artwork post */
+  /* rounded container that contains author img and name */
+  /* name of author */
+  /* title of artwork (placed below art) */
+}
+#FeedPost #containerRect {
+  position: relative;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.9);
+}
+#FeedPost #postImage {
+  /* parent is relative */
+  position: relative;
+  width: 100%;
+  border-radius: 4.3988269795%/5.3859964093%;
+  height: 557px;
+  object-fit: cover;
+}
+#FeedPost #authorContainer {
+  position: absolute;
+  background: linear-gradient(251.4deg, #56a190 31.02%, #2c5241 106.95%);
+}
+#FeedPost #profileImg {
+  position: absolute;
+}
+#FeedPost #authorName {
+  position: absolute;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+#FeedPost #artTitle {
+  /* positioning is relative to container Rect */
+  position: relative;
+  text-align: left;
+}
+#FeedPost #art-description {
+  position: relative;
+  text-align: left;
+  left: 1.7595307918vw;
+  top: 0.6693440428vw;
+}
+#FeedPost .commentSec {
+  position: relative;
+  overflow: auto;
+  width: 100%;
+}
+#FeedPost .commentDiv {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/*# sourceMappingURL=FeedPost.css.map */

@@ -1,0 +1,31 @@
+{
+  "name": "react-material-s3-firebase-images",
+  "version": "1.0.0",
+  "description": "server for serving s3",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "deploy": "git add . && git commit -m Build && git push",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Project-Lascaux/S3-Server.git"
+  },
+  "author": "Ayman, Jakobi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Project-Lascaux/S3-Server/issues"
+  },
+  "homepage": "https://github.com/Project-Lascaux/S3-Server#readme",
+  "dependencies": {
+    "aws-sdk": "^2.1066.0",
+    "body-parser": "^1.19.1",
+    "cors": "^2.8.5",
+    "dotenv": "^14.3.2",
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15",
+    "s3": "^4.4.0"
+  }
+}

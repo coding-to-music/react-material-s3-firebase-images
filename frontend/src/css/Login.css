@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+#Login {
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+}
+
+#Login #forgotPass {
+  text-align: center;
+}
+#Login #error {
+  text-align: center;
+}
+#Login #login-div {
+  text-align: center;
+}
+#Login #left-rect {
+  position: relative;
+  background-color: white;
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#Login #right-rect {
+  background-image: url("../sample/sky/skydrawing.png");
+  background-size: cover;
+  background-position: center;
+  width: 50vw;
+  height: 100vh;
+  left: 400px;
+}
+#Login form {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  gap: 28px;
+}
+#Login #welcome-text {
+  font-weight: bold;
+  font-size: 54px;
+  margin-bottom: 61px;
+  align-items: center;
+  text-align: center;
+}
+#Login #sign-button {
+  position: relative;
+  width: 392px;
+  height: 67px;
+  margin: 0 auto;
+}
+#Login .magenta-text {
+  color: #de35ff;
+}
+#Login input {
+  position: relative;
+  padding-left: 24px;
+  width: 392px;
+  height: 67px;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  border-radius: 12px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  margin: 0 auto;
+}
+#Login input:focus {
+  outline: none;
+}
+#Login input::placeholder {
+  position: relative;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  align-items: center;
+}
+@media screen and (max-width: 920px) {
+  #Login #left-rect {
+    width: 100vw;
+  }
+  #Login #right-rect {
+    display: none;
+  }
+}
+@media screen and (max-width: 435px) {
+  #Login input,
+#Login #sign-button {
+    width: 90vw;
+  }
+}
+#Login #logo-div {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  bottom: 34px;
+}
+#Login #logo-div > img {
+  width: 40px;
+  height: 40px;
+}
+#Login #logo-div > div {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: bold;
+  text-align: center;
+  font-size: 30px;
+}
+#Login #has-account {
+  text-align: center;
+}
+#Login #signup-link:hover {
+  text-decoration: underline;
+}
+@media screen and (max-height: 608px) {
+  #Login #logo-div {
+    position: relative;
+    bottom: 0;
+    padding-top: 15px;
+  }
+}
+@media screen and (max-height: 500px) {
+  #Login #welcome-text {
+    margin-bottom: 28px;
+  }
+}
+@media screen and (max-height: 450px) {
+  #Login input,
+#Login #sign-button {
+    width: 87.1111111111vh;
+    height: 14.8888888889vh;
+  }
+  #Login #welcome-text {
+    font-size: 12vh;
+    margin-bottom: 6.2222222222vh;
+  }
+  #Login input,
+#Login input::placeholder,
+#Login #sign-button {
+    font-size: 5.3333333333vh;
+  }
+  #Login form {
+    gap: 6.2222222222vh;
+  }
+  #Login #logo-div > div {
+    font-size: 8vh;
+  }
+  #Login #logo-div > img {
+    width: 11.3333333333vh;
+    height: 11.3333333333vh;
+  }
+  #Login input {
+    padding-left: 5.3333333333vh;
+  }
+}
+
+/*# sourceMappingURL=Login.css.map */

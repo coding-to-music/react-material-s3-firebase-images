@@ -1,0 +1,338 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+#ViewPage {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  position: absolute;
+  display: none;
+  z-index: 5;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  /* TODO: change comment-name to text */
+  /* #comments {
+      overflow: scroll;
+  } */
+}
+#ViewPage *::-webkit-scrollbar {
+  display: none;
+}
+#ViewPage * {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+#ViewPage #close-btn {
+  position: absolute;
+  top: 0px;
+  right: 50px;
+  width: 60px;
+  height: 60px;
+  z-index: 1;
+}
+#ViewPage #view-author-container {
+  gap: 22px;
+  height: 67px;
+  margin-left: 100px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+}
+#ViewPage #image {
+  width: 90.3296703297%;
+  position: relative;
+  /* margin-left: auto;
+  margin-right: auto; */
+}
+#ViewPage .centered {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#ViewPage #modal {
+  width: 1317px;
+  background: rgba(255, 250, 243, 0.95);
+  border-radius: 30px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  height: 100vh;
+  /* sets padding for top and bottom, useful for long iPhones in horizontal mode */
+  padding: 10px 0;
+  /* ensures that cal for w and h take into account padding */
+  /* https://stackoverflow.com/questions/485827/css-100-height-with-padding-margin */
+  box-sizing: border-box;
+}
+#ViewPage .left {
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  /* hor centers items */
+  align-items: center;
+  flex-direction: column;
+  width: 69.0964312832%;
+  height: 100%;
+  height: auto;
+  justify-content: center;
+  /* text-align: center; */
+}
+#ViewPage .right {
+  position: relative;
+  width: 30.9035687168%;
+  height: 100%;
+  overflow: auto;
+}
+#ViewPage .right * {
+  font-size: 18px;
+}
+#ViewPage #title {
+  text-align: center;
+  font-family: Lato;
+  font-weight: 48px;
+  font-size: 48px;
+  align-self: center;
+  align-content: center;
+  color: rgba(0, 0, 0, 0.82);
+  margin-bottom: 1.4426727411vw;
+  margin-top: 1.2148823083vw;
+  /* display: flex;
+  align-items: center; */
+}
+#ViewPage .comment-name {
+  font-weight: bold;
+  margin-right: 8px;
+  /* white-space: nowrap; */
+  /* paddiing-left: auto; */
+  /* flex-grow: 1; */
+}
+#ViewPage .comment-text {
+  font-weight: 400;
+  text-align: left;
+  font-size: 16px;
+  margin-left: 10px;
+  padding-right: 37px;
+  /* allows words to wrap when they reach edge of container */
+  /* see: https://stackoverflow.com/
+  questions/1165497/how-to-prevent-text-from-overflowing-in-css
+  */
+  word-wrap: break-word;
+}
+#ViewPage #comment-sec {
+  width: 100%;
+  position: relative;
+  margin-top: 80px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#ViewPage .comment {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+#ViewPage .profile-img {
+  width: 49px;
+}
+#ViewPage .profile-img-div {
+  width: 49px;
+  display: flex;
+  align-items: start;
+}
+#ViewPage #description {
+  font-family: Lato;
+  font-weight: 300;
+  font-size: 24px;
+  width: 327px;
+  word-wrap: break-word;
+  margin-bottom: 26px;
+}
+#ViewPage #price {
+  font-family: Lato;
+  font-weight: 300;
+  font-size: 30px;
+}
+#ViewPage #price-and-buy {
+  display: flex;
+  align-content: center;
+  gap: 20px;
+  align-items: center;
+}
+#ViewPage #buy-btn {
+  font-weight: bold;
+  font-size: 24px;
+  width: 111px;
+  height: 55px;
+  background: rgba(0, 0, 0, 0.85);
+  transition: background 0.5s;
+  border-radius: 12px;
+  color: white;
+  border: none;
+}
+#ViewPage #buy-btn:hover {
+  background: gray;
+}
+#ViewPage #title-line {
+  display: flex;
+}
+#ViewPage #like-icon, #ViewPage #comment-icon {
+  position: relative;
+  top: 16px;
+  width: 48px;
+  height: 48px;
+}
+#ViewPage #comment-icon {
+  left: 242px;
+}
+#ViewPage #like-icon {
+  right: 242px;
+}
+@media screen and (max-width: 1317px) {
+  #ViewPage #modal {
+    width: 100vw;
+  }
+  #ViewPage #view-author-container {
+    gap: 1.6704631739vw;
+    height: 5.0873196659vw;
+    margin-left: 7.5930144267vw;
+    margin-bottom: 0.3796507213vw;
+  }
+  #ViewPage #view-author-container #view-profile-img {
+    width: 3.7205770691vw;
+  }
+  #ViewPage #view-author-container #view-author-name {
+    font-size: 1.2148823083vw;
+  }
+  #ViewPage #view-author-container #followBtn, #ViewPage #view-author-container #followingBtn {
+    font-size: 1.3667425968vw;
+    height: 2.8853454822vw;
+  }
+  #ViewPage #view-author-container #followBtn {
+    width: 8.9597570235vw;
+    padding-left: 1.138952164vw;
+  }
+  #ViewPage #view-author-container #followingBtn {
+    width: 10.4783599089vw;
+    padding-left: 0.8352315869vw;
+  }
+  #ViewPage #title {
+    font-size: 3.6446469248vw;
+  }
+  #ViewPage #description {
+    font-size: 1.8223234624vw;
+  }
+  #ViewPage #price {
+    font-size: 2.277904328vw;
+  }
+  #ViewPage #like-icon, #ViewPage #comment-icon {
+    width: 3.6446469248vw;
+    top: 1.2148823083vw;
+    height: 3.6446469248vw;
+  }
+  #ViewPage #comment-icon {
+    left: 18.3750949127vw;
+  }
+  #ViewPage #like-icon {
+    right: 18.3750949127vw;
+  }
+  #ViewPage #buy-btn {
+    font-size: 1.8223234624vw;
+    width: 8.4282460137vw;
+    height: 4.1761579347vw;
+    border-radius: 10.8108108108%/21.8181818182%;
+  }
+}
+@media screen and (max-width: 774px) {
+  #ViewPage #view-author-container {
+    gap: 3.6666666667vw;
+    height: 11.1666666667vw;
+    margin-left: 16.6666666667vw;
+    margin-bottom: 0.8333333333vw;
+  }
+  #ViewPage #view-author-container #view-profile-img {
+    width: 8.1666666667vw;
+  }
+  #ViewPage #view-author-container #view-author-name {
+    font-size: 2.6666666667vw;
+  }
+  #ViewPage #view-author-container #followBtn, #ViewPage #view-author-container #followingBtn {
+    font-size: 3vw;
+    height: 6.3333333333vw;
+  }
+  #ViewPage #view-author-container #followBtn {
+    width: 19.6666666667vw;
+    padding-left: 2.5vw;
+  }
+  #ViewPage #view-author-container #followingBtn {
+    width: 23vw;
+    padding-left: 1.8333333333vw;
+  }
+  #ViewPage #modal {
+    flex-direction: column;
+    border-radius: 3.8759689922%/3.8759689922%;
+    height: 100vh;
+    overflow: auto;
+  }
+  #ViewPage .right {
+    overflow: unset;
+  }
+  #ViewPage #comment-sec {
+    margin-top: 0;
+    height: auto;
+    overflow: unset;
+  }
+  #ViewPage #close {
+    width: 7.7519379845vw;
+    height: 7.7519379845vw;
+    /* centers close btn when screen is very small (for mobile) */
+    left: 50vw;
+    transform: translateX(-50%);
+    /* animates close btn on close */
+    transition: opacity 0.5s;
+  }
+  #ViewPage .left {
+    width: 100%;
+    margin-bottom: 30px;
+    margin-top: 45px;
+  }
+  #ViewPage .right {
+    height: auto;
+    width: 100%;
+  }
+  #ViewPage #modal {
+    height: 100vh;
+  }
+  #ViewPage #title {
+    font-size: 8vw;
+  }
+  #ViewPage #description {
+    font-size: 4vw;
+    margin-bottom: 10px;
+  }
+  #ViewPage #price {
+    font-size: 5vw;
+  }
+  #ViewPage #comment-icon, #ViewPage #like-icon {
+    position: relative;
+    width: 7.7519379845vw;
+    height: 7.7519379845vw;
+    top: 1.2148823083vw;
+  }
+  #ViewPage #like-icon {
+    right: 18.3750949127vw;
+  }
+  #ViewPage #comment-icon {
+    left: 18.3750949127vw;
+  }
+  #ViewPage #price-and-buy {
+    flex-direction: column;
+    gap: 10px;
+  }
+  #ViewPage #buy-btn {
+    font-size: 4vw;
+    width: 18.5vw;
+    height: 9.1666666667vw;
+    border-radius: 10.8108108108%/21.8181818182%;
+  }
+}
+
+/*# sourceMappingURL=ViewPage.css.map */

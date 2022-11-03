@@ -1,0 +1,33 @@
+#About {
+  background-color: white;
+  width: 100vw;
+  box-sizing: border-box;
+}
+#About .sec {
+  width: 77.1825396825vw;
+  max-width: 1167px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+  box-sizing: border-box;
+}
+#About .main-header {
+  text-align: center;
+  font-weight: bold;
+  font-size: 48px;
+  color: #0b0037;
+  margin-top: 25px;
+  margin-bottom: 50px;
+}
+#About .sub-header {
+  font-weight: 600;
+  font-size: 40px;
+  color: #0b0037;
+  text-align: left;
+}
+#About .paragraph {
+  font-weight: 300;
+  font-size: 24px;
+  text-align: justify;
+}
+
+/*# sourceMappingURL=About.css.map */

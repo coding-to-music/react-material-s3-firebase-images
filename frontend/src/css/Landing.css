@@ -1,0 +1,130 @@
+#Landing {
+  overflow-x: hidden;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+#Landing #navbar {
+  height: 10px;
+}
+#Landing #intro-text {
+  font-weight: 800;
+  font-size: 6.517311609vh;
+  align-items: center;
+  color: #000000;
+  margin: 3.2586558045vh 0;
+  flex-shrink: 0;
+}
+#Landing #belt-div {
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  column-gap: 1.2219959267vh;
+}
+#Landing .belt {
+  position: relative;
+  height: 100%;
+}
+#Landing #scroll-left-div {
+  position: absolute;
+  left: 0;
+  width: 20%;
+  height: 100%;
+  top: 0;
+}
+#Landing #parent-div {
+  width: 100vw;
+  position: relative;
+  max-height: 1200px;
+  min-height: 20vw;
+  flex-shrink: 1;
+}
+#Landing #scroll-right-div {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 20%;
+  height: 100%;
+}
+#Landing #join-lasco-button {
+  margin: 0 auto;
+  margin-top: 5.0916496945vh;
+  margin-bottom: 5.0916496945vh;
+  height: 10.3869653768vh;
+  width: 27.4949083503vh;
+  flex-shrink: 0;
+  font-size: 3.3604887984vh;
+  border-radius: 2.0366598778vh;
+  transition: transform, 0.2s;
+}
+#Landing .login-signup {
+  height: 100%;
+}
+#Landing #logo-div {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  align-items: center;
+  bottom: 2.2486772487vh;
+  left: 2.380952381vw;
+}
+#Landing #join-lasco-button:hover {
+  transform: translateY(-3px);
+  min-width: 150px;
+  max-width: 270px;
+  flex-shrink: 2;
+}
+#Landing #logo-div > div {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: bold;
+  text-align: center;
+  font-size: 36px;
+}
+#Landing #logo-img {
+  height: 51px;
+}
+@media screen and (max-height: 500px) {
+  #Landing .login-signup {
+    width: 38.4vh;
+    border: solid 0.6vh transparent;
+    border-radius: 6.25%/12.9032258065%;
+    font-size: 4.8vh;
+  }
+  #Landing #logo-div > div {
+    font-size: 7.2vh;
+  }
+  #Landing #logo-img {
+    height: 10.2vh;
+  }
+  #Landing #button-div {
+    height: 18.6vh;
+  }
+}
+@media screen and (max-width: 809px) and (min-height: 500px) {
+  #Landing #intro-text {
+    margin: 10px 0;
+  }
+  #Landing #button-div {
+    margin-top: 3.0549898167vh;
+  }
+  #Landing #logo-div {
+    left: 50vw;
+    transform: translateX(-50%);
+    bottom: 1.1201629328vh;
+  }
+  #Landing #logo-div > div {
+    font-weight: bold;
+    text-align: center;
+    font-size: 2.566191446vh;
+  }
+  #Landing #logo-img {
+    height: 3.6354378819vh;
+  }
+}
+
+/*# sourceMappingURL=Landing.css.map */

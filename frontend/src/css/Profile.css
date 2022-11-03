@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+.blur {
+  filter: blur(8px);
+}
+
+#Profile .profileName {
+  margin-block-end: 0;
+  font-weight: bold;
+  font-size: 24px;
+}
+#Profile .username {
+  margin-block-start: 9px;
+  margin-block-end: 28px;
+  font-weight: 300;
+  font-size: 18px;
+}
+#Profile .galleryImg {
+  width: 195px;
+}
+#Profile .profileImg {
+  width: 118px;
+}
+#Profile .bio {
+  margin-block-end: 19px;
+  font-weight: 200;
+  font-size: 18px;
+}
+#Profile #dashboard * {
+  font-family: "Inter";
+}
+@media only screen and (max-width: 900px) {
+  #Profile #gallery {
+    grid-template-columns: repeat(3, auto);
+    width: 665px;
+  }
+}
+@media only screen and (max-width: 665px) {
+  #Profile #gallery {
+    grid-template-columns: repeat(2, auto);
+    width: 430px;
+  }
+}
+@media only screen and (max-width: 430px) {
+  #Profile #gallery {
+    grid-template-columns: repeat(1, auto);
+    width: 95%;
+  }
+  #Profile #gallery * {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 900px) {
+  #Profile #gallery {
+    width: 900px;
+    grid-template-columns: repeat(4, 195px);
+  }
+}
+#Profile #gallery {
+  display: grid;
+  position: relative;
+  gap: 40px;
+  margin: 34px auto;
+  grid-template-rows: auto;
+}
+#Profile #profile-div {
+  /* centers profile div */
+  margin: 0 auto;
+  width: min-content;
+  gap: 20px;
+}
+#Profile .profile-link {
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  align-content: center;
+  display: flex;
+}
+#Profile .del-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+#Profile .container {
+  width: 195px;
+  height: 195px;
+  border-radius: 20px;
+}
+#Profile .container img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+@supports (object-fit: cover) {
+  #Profile .container img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+#Profile .profile-btn {
+  width: 100px;
+  height: 30px;
+}
+
+/*# sourceMappingURL=Profile.css.map */
