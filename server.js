@@ -48,4 +48,4 @@ app.post("/delete-art", (req, res) => {
 //   // generates upload url, and sends it back
 // })
 
-app.listen(process.env.SERVER_PORT, () => console.log(`server listening at ${process.env.SERVER_PORT}`));
+app.listen(process.env.SERVER_PORT, () => console.log(`server listening at http://localhost:${process.env.SERVER_PORT}`));
