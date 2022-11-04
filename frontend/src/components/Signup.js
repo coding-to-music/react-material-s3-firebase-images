@@ -71,7 +71,7 @@ function Signup() {
                 username: username,
                 displayName: name,
                 useCase: useCase,
-                photoURL: "https://lasco-dev.s3.amazonaws.com/profile-pics/defaultProfile.png",
+                photoURL: "https://.s3.amazonaws.com/profile-pics/defaultProfile.png",
                 artwork: [],
                 followers: [],
                 following: [],
