@@ -97,7 +97,8 @@ function Profile() {
                 </Button>
               </label>
             </Link>
-            {userInfo.photoURL && <img className="profileImg" src={userInfo.photoURL} />}
+            {process.env.REACT_APP_PHOTO_URL && <img className="profileImg" src={process.env.REACT_APP_PHOTO_URL} />}
+            {/* {userInfo.photoURL && <img className="profileImg" src={userInfo.photoURL} />} */}
             <Link to="/stats" id="stats-link">
               <label htmlFor="stats-btn">
                 <button

@@ -3,6 +3,9 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./components/App";
 import reportWebVitals from "./defaults/reportWebVitals";
+import ReactGA from 'react-ga';
+
+ReactGA.initialize(process.env.REACT_APP_FIREBASE_MEASUREMENT_ID)
 
 ReactDOM.render(
   <React.StrictMode>
