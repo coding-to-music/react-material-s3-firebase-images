@@ -171,7 +171,7 @@
 #NavBar.vertical {
   position: absolute;
   width: 325px;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   height: 100vh;
   justify-content: flex-start;
   padding: 100px 2%;
@@ -183,11 +183,9 @@
   #NavBar {
     padding: 0 10px;
   }
-
   #logo-div-2 {
     width: 51px !important;
   }
-
   #top-div {
     display: flex;
   }

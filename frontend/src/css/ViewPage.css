@@ -17,10 +17,8 @@
   display: none;
 }
 #ViewPage * {
-  -ms-overflow-style: none;
-  /* IE and Edge */
-  scrollbar-width: none;
-  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 #ViewPage #close-btn {
   position: absolute;

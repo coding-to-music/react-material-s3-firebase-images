@@ -89,7 +89,7 @@
 }
 @media screen and (max-width: 435px) {
   #Login input,
-#Login #sign-button {
+  #Login #sign-button {
     width: 90vw;
   }
 }
@@ -133,7 +133,7 @@
 }
 @media screen and (max-height: 450px) {
   #Login input,
-#Login #sign-button {
+  #Login #sign-button {
     width: 87.1111111111vh;
     height: 14.8888888889vh;
   }
@@ -142,8 +142,8 @@
     margin-bottom: 6.2222222222vh;
   }
   #Login input,
-#Login input::placeholder,
-#Login #sign-button {
+  #Login input::placeholder,
+  #Login #sign-button {
     font-size: 5.3333333333vh;
   }
   #Login form {

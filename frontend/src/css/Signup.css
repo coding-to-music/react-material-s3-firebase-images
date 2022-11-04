@@ -94,15 +94,15 @@
 }
 @media screen and (max-width: 435px) {
   #Signup input,
-#Signup #use-for,
-#Signup #sign-button {
+  #Signup #use-for,
+  #Signup #sign-button {
     width: 90vw;
   }
 }
 @media screen and (max-height: 630px) {
   #Signup input,
-#Signup #use-for,
-#Signup #sign-button {
+  #Signup #use-for,
+  #Signup #sign-button {
     width: 62.2222222222vh;
     height: 9.5238095238vh;
   }
@@ -111,9 +111,9 @@
     margin-bottom: 4.7619047619vh;
   }
   #Signup input,
-#Signup input::placeholder,
-#Signup #use-for,
-#Signup #sign-button {
+  #Signup input::placeholder,
+  #Signup #use-for,
+  #Signup #sign-button {
     font-size: 3.8095238095vh;
   }
   #Signup form {
@@ -127,7 +127,7 @@
     height: 6.3492063492vh;
   }
   #Signup input,
-#Signup #use-for {
+  #Signup #use-for {
     padding-left: 3.8095238095vh;
   }
 }
