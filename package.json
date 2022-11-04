@@ -4,9 +4,15 @@
   "description": "server for serving s3",
   "main": "server.js",
   "type": "module",
+  "browser": {
+    "fs": false,
+    "files": false
+  },
   "scripts": {
     "dev": "nodemon server.js",
+    "start": "concurrently \"nodemon server.js\"  \"cd frontend && npm run start\" ",
     "deploy": "git add . && git commit -m Build && git push",
+    "olddev": "concurrently \"sass --watch src/scss:src/css\" \"react-scripts start\" ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -66,12 +66,14 @@ function Signup() {
 
             console.log("newUID", newUID);
 
+            console.log("process.env.REACT_APP_PHOTO_URL", process.env.REACT_APP_PHOTO_URL)
+
             await createUser({
                 uid: newUID,
                 username: username,
                 displayName: name,
                 useCase: useCase,
-                photoURL: "https://.s3.amazonaws.com/profile-pics/defaultProfile.png",
+                photoURL: process.env.REACT_APP_PHOTO_URL,
                 artwork: [],
                 followers: [],
                 following: [],
