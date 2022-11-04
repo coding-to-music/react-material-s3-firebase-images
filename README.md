@@ -40,6 +40,33 @@ git remote add origin git@github.com:coding-to-music/react-material-s3-firebase-
 git push -u origin main
 ```
 
+### Error messages
+
+```
+# Start API server on http://localhost:3333
+npm run dev
+
+# In a different terminal window
+cd frontend
+npm run start
+View http://localhost:3000/
+```
+
+Output
+
+```
+Uncaught FirebaseError: Firebase: Error (auth/invalid-api-key).
+    at createErrorInternal (assert.ts:128:1)
+    at _assert (assert.ts:153:1)
+    at register.ts:67:1
+    at Component.instanceFactory (register.ts:90:1)
+    at Provider.getOrInitializeService (provider.ts:318:1)
+    at Provider.initialize (provider.ts:242:1)
+    at initializeAuth (initialize.ts:66:1)
+    at getAuth (index.ts:44:1)
+    at ./src/components/firebase.js (firebase.js:24:1)
+    at options.factory (react refresh:6:1)
+```
 
 [![Repo License](https://img.shields.io/badge/license-GPL--3.0-orange?style=plastic)](./LICENSE)
 [![Website](https://img.shields.io/website?style=plastic&url=https%3A%2F%2Flascoapp.com%2F)](https://lascoapp.com/)
